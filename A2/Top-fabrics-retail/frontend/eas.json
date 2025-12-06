@@ -1,0 +1,28 @@
+{
+  "cli": {
+    "version": ">= 5.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleVersion": "8.13"          // ← this fixes the serviceOf() error
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "android": {
+        "gradleVersion": "8.13"          // ← also add it here so production builds keep working
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
